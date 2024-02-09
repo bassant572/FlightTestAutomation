@@ -50,7 +50,7 @@ public class FlightTestCases {
         driver.findElement(By.xpath("//*[@id=\"flight-search-widget\"]/div/div/form/div[2]/div[2]/div[1]/div/div[1]/div/input")).click();
 
         // Delay 200 ms waiting for DatePiker to open
-        delay(200L);
+        delay(400L);
 
         //new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.className("DayPicker-Day--today")));
         driver.findElements(By.className("DayPicker-Day--today")).get(0).click();
