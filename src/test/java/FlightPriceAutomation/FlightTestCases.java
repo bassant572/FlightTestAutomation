@@ -1,6 +1,7 @@
 package FlightPriceAutomation;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,6 +24,12 @@ public class FlightTestCases {
             System.out.println("An Excetion occured: " + e);
         }
     }
+
+    public void scrolldown(){
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,350)", "");
+        }
 
     @Test
     public void OpenWebsite(){
@@ -71,11 +78,12 @@ public class FlightTestCases {
 
         String price = driver.findElement(By.className("fhEQLR")).findElement(By.className("liRvXf")).getText().trim();
 
-        System.out.println(price);
+         scrolldown();
+         delay(2000L);
 
         Assert.assertEquals(price,"333.67");
 
-       driver.quit();
+      driver.quit();
 
     }
 
